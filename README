@@ -1,0 +1,13 @@
+//=============================================================================
+//						NMCB Launcher		
+//
+//  by:         Marcus Ullrich
+//  license:    CC-by-nc-sa 3.0
+//		http://creativecommons.org/licenses/by-nc-sa/3.0/
+//
+//=============================================================================
+
+The /config/ and /lib/ folder have to be in the .exe path.
+
+modBase in the settings.ini is the Path to the URL the provided files are found.
+For protecting this site via .htaccess you can use the securityWorker Class.
