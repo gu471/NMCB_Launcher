@@ -9,5 +9,7 @@
 
 The /config/ and /lib/ folder have to be in the .exe path.
 
+The optional.list contains substrings of optional mods, each in a line.
+
 modBase in the settings.ini is the Path to the URL the provided files are found.
 For protecting this site via .htaccess you can use the securityWorker Class.
