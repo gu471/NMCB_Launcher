@@ -282,6 +282,10 @@ namespace NMCB_Launcher.classes.structures
                 }
                 else
                 {
+                    if (Path.GetFileName(pathOld) != Path.GetFileName(pathNew))
+                        File.Delete(rootLocal + pathOld);
+                    Debug.WriteLine(pathOld);
+                    Debug.WriteLine(pathNew);
                     //Debug.WriteLine("DL: " + remotePath);
                     //Debug.WriteLine("LOC:" + localPath);
                     http.addToDownload(new downloadItem(remotePath, localPath));
@@ -339,7 +343,7 @@ namespace NMCB_Launcher.classes.structures
                             ftp.FtpDelete(root + item.pathOld);
                     }
 
-                    if (item.pathNew != "")
+                    if (item.pathNew != "" && item.pathNew != @"\")
                     {
                         if (!item.URL.isURL())
                         {

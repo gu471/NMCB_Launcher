@@ -2779,7 +2779,7 @@
             this.updateController1.releaseFilter.checkForBeta = true;
             this.updateController1.releaseFilter.checkForFinal = true;
             this.updateController1.releaseInfo.Type = updateSystemDotNet.releaseTypes.Beta;
-            this.updateController1.releaseInfo.Version = "1.0.1.25";
+            this.updateController1.releaseInfo.Version = "1.0.1.27";
             this.updateController1.requestElevation = true;
             this.updateController1.restartApplication = true;
             this.updateController1.updateUrl = "http://root.gu471.de/files/tnmcb/files";
