@@ -59,6 +59,7 @@
             this.rbMCPtrue = new System.Windows.Forms.RadioButton();
             this.glInstallOptional = new GlacialComponents.Controls.GlacialList();
             this.splitContainer32 = new System.Windows.Forms.SplitContainer();
+            this.bInstallKeyBind = new System.Windows.Forms.Button();
             this.cbLockInstall = new System.Windows.Forms.CheckBox();
             this.label19 = new System.Windows.Forms.Label();
             this.bInstall = new System.Windows.Forms.Button();
@@ -215,7 +216,6 @@
             this.bDebugProfile = new System.Windows.Forms.Button();
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
             this.updateController1 = new updateSystemDotNet.updateController();
-            this.bInstallKeyBind = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer36)).BeginInit();
@@ -463,7 +463,7 @@
             this.tabUpdate.Location = new System.Drawing.Point(4, 22);
             this.tabUpdate.Name = "tabUpdate";
             this.tabUpdate.Padding = new System.Windows.Forms.Padding(3);
-            this.tabUpdate.Size = new System.Drawing.Size(663, 519);
+            this.tabUpdate.Size = new System.Drawing.Size(585, 519);
             this.tabUpdate.TabIndex = 0;
             this.tabUpdate.Text = "tabUpdate";
             this.tabUpdate.UseVisualStyleBackColor = true;
@@ -484,7 +484,7 @@
             // 
             this.splitContainer36.Panel2.Controls.Add(this.bUpdateCheck);
             this.splitContainer36.Panel2.Controls.Add(this.bUpdateStartMC);
-            this.splitContainer36.Size = new System.Drawing.Size(657, 513);
+            this.splitContainer36.Size = new System.Drawing.Size(579, 513);
             this.splitContainer36.SplitterDistance = 170;
             this.splitContainer36.TabIndex = 32;
             // 
@@ -503,7 +503,7 @@
             // splitContainer37.Panel2
             // 
             this.splitContainer37.Panel2.Controls.Add(this.splitContainer39);
-            this.splitContainer37.Size = new System.Drawing.Size(657, 170);
+            this.splitContainer37.Size = new System.Drawing.Size(579, 170);
             this.splitContainer37.SplitterDistance = 54;
             this.splitContainer37.TabIndex = 33;
             // 
@@ -521,7 +521,7 @@
             // splitContainer38.Panel2
             // 
             this.splitContainer38.Panel2.Controls.Add(this.pbUpdateDownload);
-            this.splitContainer38.Size = new System.Drawing.Size(657, 54);
+            this.splitContainer38.Size = new System.Drawing.Size(579, 54);
             this.splitContainer38.SplitterDistance = 25;
             this.splitContainer38.TabIndex = 0;
             // 
@@ -539,7 +539,7 @@
             this.pbUpdateDownload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbUpdateDownload.Location = new System.Drawing.Point(0, 0);
             this.pbUpdateDownload.Name = "pbUpdateDownload";
-            this.pbUpdateDownload.Size = new System.Drawing.Size(657, 25);
+            this.pbUpdateDownload.Size = new System.Drawing.Size(579, 25);
             this.pbUpdateDownload.TabIndex = 28;
             // 
             // splitContainer39
@@ -556,7 +556,7 @@
             // splitContainer39.Panel2
             // 
             this.splitContainer39.Panel2.Controls.Add(this.splitContainer40);
-            this.splitContainer39.Size = new System.Drawing.Size(657, 112);
+            this.splitContainer39.Size = new System.Drawing.Size(579, 112);
             this.splitContainer39.SplitterDistance = 25;
             this.splitContainer39.TabIndex = 0;
             // 
@@ -583,7 +583,7 @@
             // splitContainer40.Panel2
             // 
             this.splitContainer40.Panel2.Controls.Add(this.lUpdateActual);
-            this.splitContainer40.Size = new System.Drawing.Size(657, 83);
+            this.splitContainer40.Size = new System.Drawing.Size(579, 83);
             this.splitContainer40.SplitterDistance = 54;
             this.splitContainer40.TabIndex = 0;
             // 
@@ -601,7 +601,7 @@
             // splitContainer41.Panel2
             // 
             this.splitContainer41.Panel2.Controls.Add(this.pbUpdateOverall);
-            this.splitContainer41.Size = new System.Drawing.Size(657, 54);
+            this.splitContainer41.Size = new System.Drawing.Size(579, 54);
             this.splitContainer41.SplitterDistance = 25;
             this.splitContainer41.TabIndex = 0;
             // 
@@ -610,7 +610,7 @@
             this.pbUpdate.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbUpdate.Location = new System.Drawing.Point(0, 0);
             this.pbUpdate.Name = "pbUpdate";
-            this.pbUpdate.Size = new System.Drawing.Size(657, 25);
+            this.pbUpdate.Size = new System.Drawing.Size(579, 25);
             this.pbUpdate.TabIndex = 25;
             // 
             // pbUpdateOverall
@@ -618,7 +618,7 @@
             this.pbUpdateOverall.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbUpdateOverall.Location = new System.Drawing.Point(0, 0);
             this.pbUpdateOverall.Name = "pbUpdateOverall";
-            this.pbUpdateOverall.Size = new System.Drawing.Size(657, 25);
+            this.pbUpdateOverall.Size = new System.Drawing.Size(579, 25);
             this.pbUpdateOverall.TabIndex = 26;
             // 
             // lUpdateActual
@@ -853,6 +853,17 @@
             this.splitContainer32.SplitterDistance = 63;
             this.splitContainer32.TabIndex = 31;
             // 
+            // bInstallKeyBind
+            // 
+            this.bInstallKeyBind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bInstallKeyBind.Location = new System.Drawing.Point(412, 38);
+            this.bInstallKeyBind.Name = "bInstallKeyBind";
+            this.bInstallKeyBind.Size = new System.Drawing.Size(153, 23);
+            this.bInstallKeyBind.TabIndex = 32;
+            this.bInstallKeyBind.Text = "Tastaturbelegung neu laden";
+            this.bInstallKeyBind.UseVisualStyleBackColor = true;
+            this.bInstallKeyBind.Click += new System.EventHandler(this.bInstallKeyBind_Click);
+            // 
             // cbLockInstall
             // 
             this.cbLockInstall.AutoSize = true;
@@ -1034,7 +1045,7 @@
             this.tabAdmin.Location = new System.Drawing.Point(4, 22);
             this.tabAdmin.Name = "tabAdmin";
             this.tabAdmin.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdmin.Size = new System.Drawing.Size(663, 519);
+            this.tabAdmin.Size = new System.Drawing.Size(585, 519);
             this.tabAdmin.TabIndex = 2;
             this.tabAdmin.Text = "tabAdmin";
             this.tabAdmin.UseVisualStyleBackColor = true;
@@ -1052,7 +1063,7 @@
             this.tabControlAdmin.Location = new System.Drawing.Point(3, 3);
             this.tabControlAdmin.Name = "tabControlAdmin";
             this.tabControlAdmin.SelectedIndex = 0;
-            this.tabControlAdmin.Size = new System.Drawing.Size(657, 513);
+            this.tabControlAdmin.Size = new System.Drawing.Size(579, 513);
             this.tabControlAdmin.TabIndex = 0;
             // 
             // tabAdminForge
@@ -1061,7 +1072,7 @@
             this.tabAdminForge.Location = new System.Drawing.Point(4, 22);
             this.tabAdminForge.Name = "tabAdminForge";
             this.tabAdminForge.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminForge.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminForge.Size = new System.Drawing.Size(571, 487);
             this.tabAdminForge.TabIndex = 0;
             this.tabAdminForge.Text = "Forge";
             this.tabAdminForge.UseVisualStyleBackColor = true;
@@ -1080,7 +1091,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.splitContainer3);
-            this.splitContainer1.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer1.Size = new System.Drawing.Size(565, 481);
             this.splitContainer1.SplitterDistance = 183;
             this.splitContainer1.TabIndex = 19;
             // 
@@ -1147,7 +1158,7 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.lbAdminForgeLog);
-            this.splitContainer3.Size = new System.Drawing.Size(456, 481);
+            this.splitContainer3.Size = new System.Drawing.Size(378, 481);
             this.splitContainer3.SplitterDistance = 166;
             this.splitContainer3.TabIndex = 0;
             // 
@@ -1166,7 +1177,7 @@
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.Controls.Add(this.updAdminForgeReplace);
-            this.splitContainer4.Size = new System.Drawing.Size(456, 166);
+            this.splitContainer4.Size = new System.Drawing.Size(378, 166);
             this.splitContainer4.SplitterDistance = 25;
             this.splitContainer4.TabIndex = 19;
             // 
@@ -1186,7 +1197,7 @@
             this.updAdminForgeReplace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminForgeReplace.Location = new System.Drawing.Point(0, 0);
             this.updAdminForgeReplace.Name = "updAdminForgeReplace";
-            this.updAdminForgeReplace.Size = new System.Drawing.Size(456, 137);
+            this.updAdminForgeReplace.Size = new System.Drawing.Size(378, 137);
             this.updAdminForgeReplace.TabIndex = 16;
             this.updAdminForgeReplace.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminForgeReplace_DragDrop);
             this.updAdminForgeReplace.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminForgeReplace_DragEnter);
@@ -1197,7 +1208,7 @@
             this.lbAdminForgeLog.FormattingEnabled = true;
             this.lbAdminForgeLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminForgeLog.Name = "lbAdminForgeLog";
-            this.lbAdminForgeLog.Size = new System.Drawing.Size(456, 311);
+            this.lbAdminForgeLog.Size = new System.Drawing.Size(378, 311);
             this.lbAdminForgeLog.TabIndex = 0;
             this.lbAdminForgeLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbAdminForgeLog_KeyUp);
             // 
@@ -2715,7 +2726,7 @@
             this.tabDebug.Location = new System.Drawing.Point(4, 22);
             this.tabDebug.Name = "tabDebug";
             this.tabDebug.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDebug.Size = new System.Drawing.Size(663, 519);
+            this.tabDebug.Size = new System.Drawing.Size(585, 519);
             this.tabDebug.TabIndex = 3;
             this.tabDebug.Text = "tDebug";
             this.tabDebug.UseVisualStyleBackColor = true;
@@ -2736,7 +2747,7 @@
             // splitContainer42.Panel2
             // 
             this.splitContainer42.Panel2.Controls.Add(this.rtbDebug);
-            this.splitContainer42.Size = new System.Drawing.Size(657, 513);
+            this.splitContainer42.Size = new System.Drawing.Size(579, 513);
             this.splitContainer42.SplitterDistance = 28;
             this.splitContainer42.TabIndex = 20;
             // 
@@ -2764,7 +2775,7 @@
             this.rtbDebug.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbDebug.Location = new System.Drawing.Point(0, 0);
             this.rtbDebug.Name = "rtbDebug";
-            this.rtbDebug.Size = new System.Drawing.Size(657, 481);
+            this.rtbDebug.Size = new System.Drawing.Size(579, 481);
             this.rtbDebug.TabIndex = 18;
             this.rtbDebug.Text = "";
             // 
@@ -2781,7 +2792,7 @@
             this.updateController1.releaseFilter.checkForBeta = true;
             this.updateController1.releaseFilter.checkForFinal = true;
             this.updateController1.releaseInfo.Type = updateSystemDotNet.releaseTypes.Beta;
-            this.updateController1.releaseInfo.Version = "1.0.1.28";
+            this.updateController1.releaseInfo.Version = "1.0.1.31";
             this.updateController1.requestElevation = true;
             this.updateController1.restartApplication = true;
             this.updateController1.updateUrl = "http://root.gu471.de/files/tnmcb/files";
@@ -2789,17 +2800,6 @@
             this.updateController1.downloadUpdatesCompleted += new updateSystemDotNet.downloadUpdatesCompletedEventHandler(this.updateController1_downloadUpdatesCompleted);
             this.updateController1.downloadUpdatesProgressChanged += new updateSystemDotNet.downloadUpdatesProgressChangedEventHandler(this.updateController1_downloadUpdatesProgressChanged);
             this.updateController1.updateFound += new updateSystemDotNet.updateFoundEventHandler(this.updateController1_updateFound);
-            // 
-            // bInstallKeyBind
-            // 
-            this.bInstallKeyBind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bInstallKeyBind.Location = new System.Drawing.Point(412, 38);
-            this.bInstallKeyBind.Name = "bInstallKeyBind";
-            this.bInstallKeyBind.Size = new System.Drawing.Size(153, 23);
-            this.bInstallKeyBind.TabIndex = 32;
-            this.bInstallKeyBind.Text = "Tastaturbelegung neu laden";
-            this.bInstallKeyBind.UseVisualStyleBackColor = true;
-            this.bInstallKeyBind.Click += new System.EventHandler(this.bInstallKeyBind_Click);
             // 
             // Form1
             // 

@@ -282,7 +282,7 @@ namespace NMCB_Launcher.classes.structures
                 }
                 else
                 {
-                    if (Path.GetFileName(pathOld) != Path.GetFileName(pathNew))
+                    if ((Path.GetFileName(pathOld) != Path.GetFileName(pathNew) && File.Exists(rootLocal + pathOld)))
                         File.Delete(rootLocal + pathOld);
                     Debug.WriteLine(pathOld);
                     Debug.WriteLine(pathNew);

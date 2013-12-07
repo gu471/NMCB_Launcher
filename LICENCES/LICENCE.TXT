@@ -22,9 +22,9 @@
 //	//		modified	no
 //	//		used for	list with checkboxes
 //	
-//	// lib\ICSharpCode.SharpZipLib.dll
-//	//		found at:	http://www.icsharpcode.net/opensource/sharpziplib/
-//	//		license:	GPLv2
+//	// lib\7zip\7zip.exe
+//	//		found at:	http://www.7-zip.org/
+//	//		license:	LGPL
 //	//		modified:	no
 //	//		used for:	unpacking zip files
 //

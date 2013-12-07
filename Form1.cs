@@ -54,8 +54,11 @@ namespace NMCB_Launcher
             {
                 try
                 {
-                    AssemblyName name = AssemblyName.GetAssemblyName(file);
-                    assemblyNameToFileMapping.Add(name.FullName, file);
+                    if (file.Contains("GlacialList1.3.dll"))
+                    {
+                        AssemblyName name = AssemblyName.GetAssemblyName(file);
+                        assemblyNameToFileMapping.Add(name.FullName, file);
+                    }
                 }
                 catch { } // Just move on if we can't get the name.
             }
@@ -545,10 +548,17 @@ namespace NMCB_Launcher
         }
         public void unzipChocolate()
         {
-            zipWorker zip = new zipWorker(rtbDebug);
             string exePath = Directory.GetCurrentDirectory();
-            Directory.SetCurrentDirectory(exePath + @"\minecraft");
-            zip.Unzip("Chocolate.zip");
+            string chocpath = exePath + @"\minecraft\Chocolate\";
+            if (Directory.Exists(chocpath))
+                Directory.Delete(chocpath, true);
+            Directory.CreateDirectory(chocpath);
+            Directory.SetCurrentDirectory(exePath + @"\minecraft\");
+            var processStartInfo = new ProcessStartInfo();
+            processStartInfo.FileName = exePath + @"\lib\7zip\7z.exe";
+            processStartInfo.Arguments = "x " + exePath + @"\minecraft\Chocolate.zip";
+            Process zip = Process.Start(processStartInfo);
+            zip.WaitForExit();
             File.Delete("Chocolate.zip");
             Directory.SetCurrentDirectory(exePath);
         }
@@ -1287,7 +1297,7 @@ namespace NMCB_Launcher
 
         private void dummy_Click(object sender, EventArgs e)
         {
-
+            unzipChocolate();
         }
     }
 }
