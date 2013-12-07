@@ -215,6 +215,7 @@
             this.bDebugProfile = new System.Windows.Forms.Button();
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
             this.updateController1 = new updateSystemDotNet.updateController();
+            this.bInstallKeyBind = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabUpdate.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer36)).BeginInit();
@@ -453,7 +454,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 0);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(671, 545);
+            this.tabControl.Size = new System.Drawing.Size(593, 545);
             this.tabControl.TabIndex = 0;
             // 
             // tabUpdate
@@ -655,7 +656,7 @@
             this.tabInstall.Location = new System.Drawing.Point(4, 22);
             this.tabInstall.Name = "tabInstall";
             this.tabInstall.Padding = new System.Windows.Forms.Padding(3);
-            this.tabInstall.Size = new System.Drawing.Size(663, 519);
+            this.tabInstall.Size = new System.Drawing.Size(585, 519);
             this.tabInstall.TabIndex = 1;
             this.tabInstall.Text = "tabInstall";
             this.tabInstall.UseVisualStyleBackColor = true;
@@ -675,7 +676,7 @@
             // splitContainer30.Panel2
             // 
             this.splitContainer30.Panel2.Controls.Add(this.splitContainer32);
-            this.splitContainer30.Size = new System.Drawing.Size(657, 513);
+            this.splitContainer30.Size = new System.Drawing.Size(579, 513);
             this.splitContainer30.SplitterDistance = 250;
             this.splitContainer30.TabIndex = 30;
             // 
@@ -694,7 +695,7 @@
             // splitContainer31.Panel2
             // 
             this.splitContainer31.Panel2.Controls.Add(this.glInstallOptional);
-            this.splitContainer31.Size = new System.Drawing.Size(657, 250);
+            this.splitContainer31.Size = new System.Drawing.Size(579, 250);
             this.splitContainer31.SplitterDistance = 132;
             this.splitContainer31.TabIndex = 31;
             // 
@@ -820,7 +821,7 @@
             this.glInstallOptional.SelectionColor = System.Drawing.Color.DarkBlue;
             this.glInstallOptional.ShowBorder = true;
             this.glInstallOptional.ShowFocusRect = false;
-            this.glInstallOptional.Size = new System.Drawing.Size(521, 250);
+            this.glInstallOptional.Size = new System.Drawing.Size(443, 250);
             this.glInstallOptional.SortType = GlacialComponents.Controls.SortTypes.InsertionSort;
             this.glInstallOptional.SuperFlatHeaderColor = System.Drawing.Color.White;
             this.glInstallOptional.TabIndex = 2;
@@ -836,6 +837,7 @@
             // 
             // splitContainer32.Panel1
             // 
+            this.splitContainer32.Panel1.Controls.Add(this.bInstallKeyBind);
             this.splitContainer32.Panel1.Controls.Add(this.cbLockInstall);
             this.splitContainer32.Panel1.Controls.Add(this.label19);
             this.splitContainer32.Panel1.Controls.Add(this.bInstall);
@@ -847,7 +849,7 @@
             // splitContainer32.Panel2
             // 
             this.splitContainer32.Panel2.Controls.Add(this.splitContainer33);
-            this.splitContainer32.Size = new System.Drawing.Size(657, 259);
+            this.splitContainer32.Size = new System.Drawing.Size(579, 259);
             this.splitContainer32.SplitterDistance = 63;
             this.splitContainer32.TabIndex = 31;
             // 
@@ -865,7 +867,7 @@
             // 
             this.label19.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(307, 17);
+            this.label19.Location = new System.Drawing.Point(268, 17);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(28, 13);
             this.label19.TabIndex = 30;
@@ -884,7 +886,7 @@
             // bInstallStartMC
             // 
             this.bInstallStartMC.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bInstallStartMC.Location = new System.Drawing.Point(416, 37);
+            this.bInstallStartMC.Location = new System.Drawing.Point(185, 38);
             this.bInstallStartMC.Name = "bInstallStartMC";
             this.bInstallStartMC.Size = new System.Drawing.Size(146, 23);
             this.bInstallStartMC.TabIndex = 27;
@@ -895,7 +897,7 @@
             // dummy
             // 
             this.dummy.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dummy.Location = new System.Drawing.Point(568, 36);
+            this.dummy.Location = new System.Drawing.Point(331, 37);
             this.dummy.Name = "dummy";
             this.dummy.Size = new System.Drawing.Size(75, 24);
             this.dummy.TabIndex = 29;
@@ -916,7 +918,7 @@
             // bInstallChange
             // 
             this.bInstallChange.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.bInstallChange.Location = new System.Drawing.Point(449, 12);
+            this.bInstallChange.Location = new System.Drawing.Point(371, 12);
             this.bInstallChange.Name = "bInstallChange";
             this.bInstallChange.Size = new System.Drawing.Size(194, 23);
             this.bInstallChange.TabIndex = 17;
@@ -940,7 +942,7 @@
             // 
             this.splitContainer33.Panel2.Controls.Add(this.label21);
             this.splitContainer33.Panel2.Controls.Add(this.label20);
-            this.splitContainer33.Size = new System.Drawing.Size(657, 192);
+            this.splitContainer33.Size = new System.Drawing.Size(579, 192);
             this.splitContainer33.SplitterDistance = 109;
             this.splitContainer33.TabIndex = 0;
             // 
@@ -959,7 +961,7 @@
             // splitContainer34.Panel2
             // 
             this.splitContainer34.Panel2.Controls.Add(this.lInstallActual);
-            this.splitContainer34.Size = new System.Drawing.Size(657, 109);
+            this.splitContainer34.Size = new System.Drawing.Size(579, 109);
             this.splitContainer34.SplitterDistance = 59;
             this.splitContainer34.TabIndex = 0;
             // 
@@ -978,7 +980,7 @@
             // splitContainer35.Panel2
             // 
             this.splitContainer35.Panel2.Controls.Add(this.pbInstallOverall);
-            this.splitContainer35.Size = new System.Drawing.Size(657, 59);
+            this.splitContainer35.Size = new System.Drawing.Size(579, 59);
             this.splitContainer35.SplitterDistance = 27;
             this.splitContainer35.TabIndex = 0;
             // 
@@ -987,7 +989,7 @@
             this.pbInstall.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbInstall.Location = new System.Drawing.Point(0, 0);
             this.pbInstall.Name = "pbInstall";
-            this.pbInstall.Size = new System.Drawing.Size(657, 27);
+            this.pbInstall.Size = new System.Drawing.Size(579, 27);
             this.pbInstall.TabIndex = 22;
             // 
             // pbInstallOverall
@@ -995,7 +997,7 @@
             this.pbInstallOverall.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbInstallOverall.Location = new System.Drawing.Point(0, 0);
             this.pbInstallOverall.Name = "pbInstallOverall";
-            this.pbInstallOverall.Size = new System.Drawing.Size(657, 28);
+            this.pbInstallOverall.Size = new System.Drawing.Size(579, 28);
             this.pbInstallOverall.TabIndex = 23;
             // 
             // lInstallActual
@@ -2779,7 +2781,7 @@
             this.updateController1.releaseFilter.checkForBeta = true;
             this.updateController1.releaseFilter.checkForFinal = true;
             this.updateController1.releaseInfo.Type = updateSystemDotNet.releaseTypes.Beta;
-            this.updateController1.releaseInfo.Version = "1.0.1.27";
+            this.updateController1.releaseInfo.Version = "1.0.1.28";
             this.updateController1.requestElevation = true;
             this.updateController1.restartApplication = true;
             this.updateController1.updateUrl = "http://root.gu471.de/files/tnmcb/files";
@@ -2788,11 +2790,22 @@
             this.updateController1.downloadUpdatesProgressChanged += new updateSystemDotNet.downloadUpdatesProgressChangedEventHandler(this.updateController1_downloadUpdatesProgressChanged);
             this.updateController1.updateFound += new updateSystemDotNet.updateFoundEventHandler(this.updateController1_updateFound);
             // 
+            // bInstallKeyBind
+            // 
+            this.bInstallKeyBind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bInstallKeyBind.Location = new System.Drawing.Point(412, 38);
+            this.bInstallKeyBind.Name = "bInstallKeyBind";
+            this.bInstallKeyBind.Size = new System.Drawing.Size(153, 23);
+            this.bInstallKeyBind.TabIndex = 32;
+            this.bInstallKeyBind.Text = "Tastaturbelegung neu laden";
+            this.bInstallKeyBind.UseVisualStyleBackColor = true;
+            this.bInstallKeyBind.Click += new System.EventHandler(this.bInstallKeyBind_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 545);
+            this.ClientSize = new System.Drawing.Size(593, 545);
             this.Controls.Add(this.tabControl);
             this.MinimumSize = new System.Drawing.Size(609, 463);
             this.Name = "Form1";
@@ -3239,6 +3252,7 @@
         private System.Windows.Forms.CheckBox cbInstallTP;
         private GlacialComponents.Controls.GlacialList glInstallOptional;
         private System.Windows.Forms.CheckBox cbLockInstall;
+        private System.Windows.Forms.Button bInstallKeyBind;
         
     }
 }

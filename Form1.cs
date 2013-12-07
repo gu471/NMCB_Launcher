@@ -42,6 +42,7 @@ namespace NMCB_Launcher
 
         string startArgs = "";
         bool isInstall = false;
+        string keyBinds = "key_key.attack:-100\r\nkey_key.use:-99\r\nkey_key.forward:17\r\nkey_key.left:30\r\nkey_key.back:31\r\nkey_key.right:32\r\nkey_key.jump:57\r\nkey_key.sneak:42\r\nkey_key.drop:74\r\nkey_key.inventory:18\r\nkey_key.chat:20\r\nkey_key.playerlist:15\r\nkey_key.pickItem:-98\r\nkey_key.command:53\r\nkey_VoxelMods:66\r\nkey_key.macro_override:43\r\nkey_Freeze Time:0\r\nkey_Normal Time:0\r\nkey_Time Offset +:0\r\nkey_Time Offset -:0\r\nkey_ScreenShot Manager:35\r\nkey_Big Screenshot:62\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_key.tarmor:24\r\nkey_key.tcapes.reload:88\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_IC2 ALT Key:56\r\nkey_IC2 Boost Key:29\r\nkey_IC2 Mode Switch Key:51\r\nkey_IC2 Side Inventory Key:0\r\nkey_IC2 Hub Expand Key:0\r\nkey_Gravi Fly Key:16\r\nkey_Clipboard:0\r\nkey_Ender Pack:0\r\nkey_Force Belt:0\r\nkey_Force Key:83\r\nkey_Force Belt Slot 1:79\r\nkey_Force Belt Slot 2:80\r\nkey_Force Belt Slot 3:81\r\nkey_Force Belt Slot 4:75\r\nkey_Force Belt Slot 5:76\r\nkey_Force Belt Slot 6:77\r\nkey_Force Belt Slot 7:71\r\nkey_Force Belt Slot 8:72\r\nkey_Reposition Mob Portrait:68\r\nkey_Change Wand Focus:33\r\nkey_Dynamic Lights toggle:13\r\nkey_waila.keybind.wailaconfig:82\r\nkey_waila.keybind.wailadisplay:0\r\nkey_waila.keybind.liquid:0\r\nkey_waila.keybind.recipe:0\r\nkey_waila.keybind.usage:0\r\nkey_key.mw_open_gui:49\r\nkey_key.mw_new_marker:0\r\nkey_key.mw_next_map_mode:0\r\nkey_key.mw_next_marker_group:0\r\nkey_key.mw_teleport:0\r\nkey_key.mw_zoom_in:0\r\nkey_key.mw_zoom_out:0\r\nkey_Mekanism Mode Switch:52\r\nkey_Mekanism Voice:0\r\nkey_key.craftingGrid:0\r\nkey_xact.clear:208\r\nkey_xact.load:0\r\nkey_xact.prev:203\r\nkey_xact.next:205\r\nkey_xact.delete:211\r\nkey_xact.openGrid:46\r\nkey_keybind.loco.faster:0\r\nkey_keybind.loco.slower:0\r\nkey_keybind.loco.mode:0\r\nkey_keybind.loco.whistle:0\r\nkey_key.control:0\r\nkey_FullBright:0\r\nkey_Clear Weather:0\r\nkey_key.macros:58";
         #endregion
 
         #region DLLs
@@ -218,6 +219,31 @@ namespace NMCB_Launcher
             bInstallChange.Enabled = (settings.getLocalOverall() > -1) ? true : false;
             bInstallChange.Text = (bInstallChange.Enabled) ? "Konfiguration ändern" : "(brozMC ist nicht installiert)";
         }
+        public void setKeyBinds()
+        {
+            string optionsPath = Directory.GetCurrentDirectory() + @"\minecraft\options.txt";
+
+            if (!File.Exists(optionsPath))
+            {
+                File.WriteAllText(optionsPath, keyBinds);
+            }
+            else
+            {
+                string[] lines = File.ReadAllLines(optionsPath);
+                string newFile = "";
+
+                for (int i = 0; i <= lines.Length - 1; i++)
+                {
+                    if (!lines[i].Contains("key_"))
+                    {
+                        newFile += lines[i] + "\r\n";
+                    }
+                }
+
+                newFile += keyBinds;
+                File.WriteAllText(optionsPath, newFile);
+            }
+        }
 
         private void optionalOnMouseWheel(object sender, MouseEventArgs e)
         {
@@ -260,7 +286,7 @@ namespace NMCB_Launcher
 
             foreach (string dir in dirs)
             {
-                if (!dir.Contains("VoxelMods") && !dir.Contains("macros"))
+                if (!dir.Contains("VoxelMods") && !dir.Contains("macros") && !dir.Contains("WMLL"))
                 {
                     Directory.Delete(dir, true);
                 }
@@ -281,6 +307,7 @@ namespace NMCB_Launcher
 
             if (cbInstallClean.Checked)
             {
+                setKeyBinds();
                 Directory.Delete(Directory.GetCurrentDirectory() + @"\minecraft\mods", true);
                 Directory.Delete(Directory.GetCurrentDirectory() + @"\minecraft\config", true);
             }
@@ -288,6 +315,8 @@ namespace NMCB_Launcher
             {
                 cleanRecursive();
                 Directory.Delete(Directory.GetCurrentDirectory() + @"\minecraft\config", true);
+                if (isInstall)
+                    setKeyBinds();
             }
 
             if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\launcher_profiles.json"))
@@ -414,6 +443,10 @@ namespace NMCB_Launcher
                     Application.Exit();
                 }
             }
+        }
+        private void bInstallKeyBind_Click(object sender, EventArgs e)
+        {
+            setKeyBinds();
         }
         #endregion
 
