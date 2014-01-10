@@ -69,7 +69,7 @@ namespace NMCB_Launcher.classes.structures
 
             for (int i = 0; i <= data.Count - 1; i++)
             {
-                for (int j = i; j <= data.Count - 1; j++)
+                for (int j = i+1; j <= data.Count - 1; j++)
                 {
                     if (data[i].pathNew == data[j].pathOld && !data[i].isCleared() && !data[j].isCleared() && (data[i].pathNew != "" && data[i].pathNew != " " && data[i].pathNew != "  " && data[i].pathNew != @"\"))
                     {
@@ -289,7 +289,6 @@ namespace NMCB_Launcher.classes.structures
                     //Debug.WriteLine("DL: " + remotePath);
                     //Debug.WriteLine("LOC:" + localPath);
                     http.addToDownload(new downloadItem(remotePath, localPath));
-
                 }
             }
         }

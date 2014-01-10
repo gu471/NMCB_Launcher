@@ -79,9 +79,9 @@ namespace NMCB_Launcher.classes
                 if (File.Exists(url.destination))
                     File.Delete(url.destination);
 
-                client.DownloadFileAsync(new Uri(url.source), url.destination);
                 rtbDebug.addLine(" dl: " + url.source + "\r\n     => " + url.destination);
                 lAct.Text = url.source;
+                client.DownloadFileAsync(new Uri(url.source), url.destination);               
                 return;
             }
             else
@@ -99,6 +99,7 @@ namespace NMCB_Launcher.classes
             {
                 // handle error scenario
                 throw e.Error;
+                //rtbDebug.addLine(e.Error.ToString());
             }
             if (e.Cancelled)
             {

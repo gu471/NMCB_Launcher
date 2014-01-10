@@ -9,6 +9,9 @@ using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Collections.Concurrent;
+using System.Collections.Generic;
+
 using NMCB_Launcher.classes;
 using NMCB_Launcher.classes.structures;
 using updateSystemDotNet.Core.Types;
@@ -42,7 +45,7 @@ namespace NMCB_Launcher
 
         string startArgs = "";
         bool isInstall = false;
-        string keyBinds = "key_key.attack:-100\r\nkey_key.use:-99\r\nkey_key.forward:17\r\nkey_key.left:30\r\nkey_key.back:31\r\nkey_key.right:32\r\nkey_key.jump:57\r\nkey_key.sneak:42\r\nkey_key.drop:74\r\nkey_key.inventory:18\r\nkey_key.chat:20\r\nkey_key.playerlist:15\r\nkey_key.pickItem:-98\r\nkey_key.command:53\r\nkey_VoxelMods:66\r\nkey_key.macro_override:43\r\nkey_Freeze Time:0\r\nkey_Normal Time:0\r\nkey_Time Offset +:0\r\nkey_Time Offset -:0\r\nkey_ScreenShot Manager:35\r\nkey_Big Screenshot:62\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_key.tarmor:24\r\nkey_key.tcapes.reload:88\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_IC2 ALT Key:56\r\nkey_IC2 Boost Key:29\r\nkey_IC2 Mode Switch Key:51\r\nkey_IC2 Side Inventory Key:0\r\nkey_IC2 Hub Expand Key:0\r\nkey_Gravi Fly Key:16\r\nkey_Clipboard:0\r\nkey_Ender Pack:0\r\nkey_Force Belt:0\r\nkey_Force Key:83\r\nkey_Force Belt Slot 1:79\r\nkey_Force Belt Slot 2:80\r\nkey_Force Belt Slot 3:81\r\nkey_Force Belt Slot 4:75\r\nkey_Force Belt Slot 5:76\r\nkey_Force Belt Slot 6:77\r\nkey_Force Belt Slot 7:71\r\nkey_Force Belt Slot 8:72\r\nkey_Reposition Mob Portrait:68\r\nkey_Change Wand Focus:33\r\nkey_Dynamic Lights toggle:13\r\nkey_waila.keybind.wailaconfig:82\r\nkey_waila.keybind.wailadisplay:0\r\nkey_waila.keybind.liquid:0\r\nkey_waila.keybind.recipe:0\r\nkey_waila.keybind.usage:0\r\nkey_key.mw_open_gui:49\r\nkey_key.mw_new_marker:0\r\nkey_key.mw_next_map_mode:0\r\nkey_key.mw_next_marker_group:0\r\nkey_key.mw_teleport:0\r\nkey_key.mw_zoom_in:0\r\nkey_key.mw_zoom_out:0\r\nkey_Mekanism Mode Switch:52\r\nkey_Mekanism Voice:0\r\nkey_key.craftingGrid:0\r\nkey_xact.clear:208\r\nkey_xact.load:0\r\nkey_xact.prev:203\r\nkey_xact.next:205\r\nkey_xact.delete:211\r\nkey_xact.openGrid:46\r\nkey_keybind.loco.faster:0\r\nkey_keybind.loco.slower:0\r\nkey_keybind.loco.mode:0\r\nkey_keybind.loco.whistle:0\r\nkey_key.control:0\r\nkey_FullBright:0\r\nkey_Clear Weather:0\r\nkey_key.macros:58";
+        string keyBinds = "key_key.attack:-100\r\nkey_key.use:-99\r\nkey_key.forward:17\r\nkey_key.left:30\r\nkey_key.back:31\r\nkey_key.right:32\r\nkey_key.jump:57\r\nkey_key.sneak:42\r\nkey_key.drop:74\r\nkey_key.inventory:18\r\nkey_key.chat:20\r\nkey_key.playerlist:15\r\nkey_key.pickItem:-98\r\nkey_key.command:53\r\nkey_VoxelMods:66\r\nkey_key.macro_override:0\r\nkey_Freeze Time:0\r\nkey_Normal Time:0\r\nkey_Time Offset +:0\r\nkey_Time Offset -:0\r\nkey_ScreenShot Manager:35\r\nkey_Big Screenshot:62\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_key.tarmor:24\r\nkey_key.tcapes.reload:88\r\nkey_key.minimap.voxelmapmenu:50\r\nkey_IC2 ALT Key:56\r\nkey_IC2 Boost Key:29\r\nkey_IC2 Mode Switch Key:51\r\nkey_IC2 Side Inventory Key:0\r\nkey_IC2 Hub Expand Key:0\r\nkey_Gravi Fly Key:16\r\nkey_Clipboard:0\r\nkey_Ender Pack:0\r\nkey_Force Belt:0\r\nkey_Force Key:83\r\nkey_Force Belt Slot 1:79\r\nkey_Force Belt Slot 2:80\r\nkey_Force Belt Slot 3:81\r\nkey_Force Belt Slot 4:75\r\nkey_Force Belt Slot 5:76\r\nkey_Force Belt Slot 6:77\r\nkey_Force Belt Slot 7:71\r\nkey_Force Belt Slot 8:72\r\nkey_Reposition Mob Portrait:68\r\nkey_Change Wand Focus:33\r\nkey_Dynamic Lights toggle:13\r\nkey_waila.keybind.wailaconfig:82\r\nkey_waila.keybind.wailadisplay:0\r\nkey_waila.keybind.liquid:0\r\nkey_waila.keybind.recipe:0\r\nkey_waila.keybind.usage:0\r\nkey_key.mw_open_gui:49\r\nkey_key.mw_new_marker:0\r\nkey_key.mw_next_map_mode:0\r\nkey_key.mw_next_marker_group:0\r\nkey_key.mw_teleport:0\r\nkey_key.mw_zoom_in:0\r\nkey_key.mw_zoom_out:0\r\nkey_Mekanism Mode Switch:52\r\nkey_Mekanism Voice:0\r\nkey_key.craftingGrid:0\r\nkey_xact.clear:208\r\nkey_xact.load:0\r\nkey_xact.prev:203\r\nkey_xact.next:205\r\nkey_xact.delete:211\r\nkey_xact.openGrid:46\r\nkey_keybind.loco.faster:0\r\nkey_keybind.loco.slower:0\r\nkey_keybind.loco.mode:0\r\nkey_keybind.loco.whistle:0\r\nkey_key.control:0\r\nkey_FullBright:0\r\nkey_Clear Weather:0\r\nkey_key.macros:58";
         #endregion
 
         #region DLLs
@@ -99,6 +102,12 @@ namespace NMCB_Launcher
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            if (File.Exists("restart"))
+            {
+                startArgs = File.ReadAllText("restart");
+                File.Delete("restart");
+            }
+
             this.MouseWheel += new MouseEventHandler(optionalOnMouseWheel);
 
             lAdminForgeSelected.Text = "";
@@ -124,6 +133,8 @@ namespace NMCB_Launcher
 
             setChangeConfigButton();
 
+            tabDebug.Text = updateController1.Version;
+
             if (!startArgs.Contains("-debug"))
             {
                 tabControl.TabPages.Remove(tabUpdate);
@@ -135,6 +146,11 @@ namespace NMCB_Launcher
                 bInstallStartMC.Visible = false;
                 dummy.Visible = false;
                 panel1.Visible = false;
+                bChangelogMergeConfig.Visible = false;
+                bChangelogMergeForge.Visible = false;
+                bChangelogMergeMods.Visible = false;
+                bChangelogMergeOptional.Visible = false;
+                bChangelogMergeRoot.Visible = false;
             }
 
             if (!startArgs.Contains("-debug2") && updateController1.checkForUpdates())
@@ -142,6 +158,7 @@ namespace NMCB_Launcher
                 updateController1.checkForUpdatesAsync();
                 tabControl.TabPages.Add(tabUpdate);
                 isInstall = true;
+                File.WriteAllText("restart", startArgs);
             }
             else
             {
@@ -164,6 +181,7 @@ namespace NMCB_Launcher
                         tabControl.TabPages.Add(tabInstall);
                         cbLockInstall.Visible = false;
                         isInstall = true;
+                        tabInstall.Text = "Installieren";
                     }
                     else if (startArgs.Contains("-config"))
                     {
@@ -171,6 +189,7 @@ namespace NMCB_Launcher
                         tabControl.TabPages.Add(tabInstall);
                         cbLockInstall.Checked = cbLockInstall.Visible;
                         bInstall.Enabled = !cbLockInstall.Visible;
+                        tabInstall.Text = "Konfigurieren";
                     }
                     else if (startArgs == "")
                     {
@@ -318,8 +337,6 @@ namespace NMCB_Launcher
             {
                 cleanRecursive();
                 Directory.Delete(Directory.GetCurrentDirectory() + @"\minecraft\config", true);
-                if (isInstall)
-                    setKeyBinds();
             }
 
             if (!File.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + @"\.minecraft\launcher_profiles.json"))
@@ -333,7 +350,7 @@ namespace NMCB_Launcher
 
                     foreach (Process process in processlist)
                     {
-                        if (process.MainWindowTitle == "Minecraft Launcher 1.3.4")
+                        if (process.MainWindowTitle.Contains("Minecraft Launcher 1."))
                         {
                             SetForegroundWindow(process.MainWindowHandle);
                             SendKeys.SendWait("%{F4}");
@@ -356,9 +373,9 @@ namespace NMCB_Launcher
 
             localUpdate.http = http;
             localUpdate.prepareDownload(true);
-            localUpdate.initLiteLoader();
-            prepareTexturePack(http, true);
+            //localUpdate.initLiteLoader();
             bool newChoc = prepareChoc(http, true);
+            prepareTexturePack(http, true);            
 
             if (http.Count() < 1)
                 lInstallActual.Text = "fertig.";
@@ -376,6 +393,10 @@ namespace NMCB_Launcher
                 Application.DoEvents();
                 unzipChocolate();
             }
+            lInstallActual.Text = "unzipping resources";
+            Application.DoEvents();
+            unzipResources();
+            unzipTP();
             lInstallActual.Text = "fertig.";
 
             INIWorker ini = new INIWorker();
@@ -387,6 +408,8 @@ namespace NMCB_Launcher
 
             setChangeConfigButton();
 
+            if (isInstall || cbInstallClean.Checked)
+                setKeyBinds();
 
             if (!startArgs.Contains("-debug"))
             {
@@ -414,12 +437,12 @@ namespace NMCB_Launcher
             Application.DoEvents();
             rtbDebug.addLine("== change config ==");
             httpWorker http = new httpWorker(pbInstall, pbInstallOverall, lInstallActual, rtbDebug);
-
-            prepareTexturePack(http);
+            
             localUpdate.optional.getRemoteVersion(-1);
 
             localUpdate.http = http;
             localUpdate.prepareDownload(false, true);
+            prepareTexturePack(http);
 
             if (http.Count() == 0)
                 lInstallActual.Text = "fertig.";
@@ -431,8 +454,12 @@ namespace NMCB_Launcher
                 Application.DoEvents();
             }
 
+            unzipTP();
+
             localUpdate.optional.setToConfig();
             localUpdate.optional.setFromConfig(glInstallOptional);
+
+            setKeyBinds();
 
             if (!startArgs.Contains("-debug"))
             {
@@ -499,6 +526,7 @@ namespace NMCB_Launcher
                     rtbDebug.addLine("tp: " + localVersion + "<" + remoteVersion);
                     Directory.CreateDirectory(@"minecraft\resourcepacks\");
                     string dest = Directory.GetCurrentDirectory() + @"\minecraft\resourcepacks\brozPack.zip";
+                    string dest2 = Directory.GetCurrentDirectory() + @"\minecraft\resourcepacks\brozPack.7z";
                     if (File.Exists(dest))
                     {
                         FileInfo filePath = new FileInfo(dest);
@@ -508,8 +536,10 @@ namespace NMCB_Launcher
                         File.SetAttributes(filePath.FullName, attribute);
                         File.Delete(dest);
                     }
-                    string source = settings.getModBase() + "stuff/brozPack.zip";
-                    http.addToDownload(new downloadItem(source, dest));
+                    string source = settings.getModBase() + "stuff/brozPack.7z";
+                    http.addToDownload(new downloadItem(source + ".001", dest2 + ".001"));
+                    http.addToDownload(new downloadItem(source + ".002", dest2 + ".002"));
+                    http.addToDownload(new downloadItem(source + ".003", dest2 + ".003"));
                     settings.setTPVersion(remoteVersion);
                 }
 
@@ -548,19 +578,161 @@ namespace NMCB_Launcher
         }
         public void unzipChocolate()
         {
+            BlockingCollection<string> StdOut = new BlockingCollection<string>();
             string exePath = Directory.GetCurrentDirectory();
             string chocpath = exePath + @"\minecraft\Chocolate\";
             if (Directory.Exists(chocpath))
                 Directory.Delete(chocpath, true);
             Directory.CreateDirectory(chocpath);
             Directory.SetCurrentDirectory(exePath + @"\minecraft\");
+            Process zip = new Process();
             var processStartInfo = new ProcessStartInfo();
             processStartInfo.FileName = exePath + @"\lib\7zip\7z.exe";
-            processStartInfo.Arguments = "x " + exePath + @"\minecraft\Chocolate.zip";
-            Process zip = Process.Start(processStartInfo);
-            zip.WaitForExit();
-            File.Delete("Chocolate.zip");
+            processStartInfo.Arguments = "x \"" + exePath + @"\minecraft\Chocolate.zip" + "\"";
+            rtbDebug.addLine(processStartInfo.FileName + " " + processStartInfo.Arguments);
+            zip.StartInfo = processStartInfo;
+            if (startArgs.Contains("-debug"))
+            {
+                zip.StartInfo.UseShellExecute = false;
+                zip.StartInfo.RedirectStandardOutput = true;
+
+
+                zip.OutputDataReceived += new DataReceivedEventHandler(
+                    (s, e) =>
+                    {
+                        StdOut.TryAdd(e.Data);
+                    }
+                );
+            }
+            zip.Start();
+
+            if (startArgs.Contains("-debug"))
+            {
+                zip.BeginOutputReadLine();
+
+                while (!zip.HasExited)
+                {
+                    string output;
+                    StdOut.TryTake(out output);
+                    if (output != null)
+                        rtbDebug.addLine(output);
+                    Application.DoEvents();
+                }
+            }
+            else
+            {
+                zip.WaitForExit();
+                File.Delete("Chocolate.zip");
+            }            
             Directory.SetCurrentDirectory(exePath);
+        }
+
+        public void unzipTP()
+        {
+            BlockingCollection<string> StdOut = new BlockingCollection<string>();
+            string exePath = Directory.GetCurrentDirectory();
+            string rpath = exePath + @"\minecraft\resourcepacks\";
+            if (File.Exists(rpath + "BrozPack.7z.001"))
+            {
+                if (File.Exists(rpath + @"brozPack.zip"))
+                    File.Delete(rpath + @"brozPack.zip");
+                Directory.SetCurrentDirectory(rpath);
+                Process zip = new Process();
+                var processStartInfo = new ProcessStartInfo();
+                processStartInfo.FileName = exePath + @"\lib\7zip\7z.exe";
+                processStartInfo.Arguments = "x \"" + rpath + "brozPack.7z.001\"";
+                rtbDebug.addLine(processStartInfo.FileName + " " + processStartInfo.Arguments);
+                zip.StartInfo = processStartInfo;
+                if (startArgs.Contains("-debug"))
+                {
+                    zip.StartInfo.UseShellExecute = false;
+                    zip.StartInfo.RedirectStandardOutput = true;
+
+
+                    zip.OutputDataReceived += new DataReceivedEventHandler(
+                        (s, e) =>
+                        {
+                            StdOut.TryAdd(e.Data);
+                        }
+                    );
+                }
+                zip.Start();
+
+                if (startArgs.Contains("-debug"))
+                {
+                    zip.BeginOutputReadLine();
+
+                    while (!zip.HasExited)
+                    {
+                        string output;
+                        StdOut.TryTake(out output);
+                        if (output != null)
+                            rtbDebug.addLine(output);
+                        Application.DoEvents();
+                    }
+                }
+                else
+                {
+                    zip.WaitForExit();
+                    File.Delete(rpath + "BrozPack.7z.001");
+                    File.Delete(rpath + "BrozPack.7z.002");
+                    File.Delete(rpath + "BrozPack.7z.003");
+                }
+                Directory.SetCurrentDirectory(exePath);
+            }
+        }
+
+        public void unzipResources()
+        {
+            BlockingCollection<string> StdOut = new BlockingCollection<string>();
+            string exePath = Directory.GetCurrentDirectory();
+            string modpath = exePath + @"\minecraft\mods\";
+            if (File.Exists(modpath + "resources.rar"))
+            {
+                if (Directory.Exists(modpath + @"resources\"))
+                    Directory.Delete(modpath + @"resources\", true);
+                Directory.SetCurrentDirectory(modpath);
+                Process zip = new Process();
+                var processStartInfo = new ProcessStartInfo();
+                processStartInfo.FileName = exePath + @"\lib\7zip\7z.exe";
+                processStartInfo.Arguments = "x \"" + modpath + "resources.rar\"";
+                rtbDebug.addLine(processStartInfo.FileName + " " + processStartInfo.Arguments);
+                zip.StartInfo = processStartInfo;
+                if (startArgs.Contains("-debug"))
+                {
+                    zip.StartInfo.UseShellExecute = false;
+                    zip.StartInfo.RedirectStandardOutput = true;
+
+
+                    zip.OutputDataReceived += new DataReceivedEventHandler(
+                        (s, e) =>
+                        {
+                            StdOut.TryAdd(e.Data);
+                        }
+                    );
+                }
+                zip.Start();
+
+                if (startArgs.Contains("-debug"))
+                {
+                    zip.BeginOutputReadLine();
+
+                    while (!zip.HasExited)
+                    {
+                        string output;
+                        StdOut.TryTake(out output);
+                        if (output != null)
+                            rtbDebug.addLine(output);
+                        Application.DoEvents();
+                    }
+                }
+                else
+                {
+                    zip.WaitForExit();
+                    File.Delete(modpath + "resources.rar");
+                }
+                Directory.SetCurrentDirectory(exePath);
+            }
         }
         #endregion
 
@@ -1253,11 +1425,12 @@ namespace NMCB_Launcher
 
             localUpdate.http = http;
             localUpdate.prepareDownload(true);
-            prepareTexturePack(http);
             bool newChoc = prepareChoc(http);
+            prepareTexturePack(http);
 
             if (http.Count() < 1)
                 lUpdateActual.Text = "fertig.";
+
             http.startDownload();
 
             while (lUpdateActual.Text != "fertig.")
@@ -1271,6 +1444,10 @@ namespace NMCB_Launcher
                 Application.DoEvents();
                 unzipChocolate();
             }
+            lUpdateActual.Text = "unzipping resources";
+            Application.DoEvents();
+            unzipResources();
+            unzipTP();
 
             INIWorker ini = new INIWorker();
             ini.setLocalConfig(localUpdate.configs.dataVersion);
@@ -1297,7 +1474,47 @@ namespace NMCB_Launcher
 
         private void dummy_Click(object sender, EventArgs e)
         {
-            unzipChocolate();
+            unzipResources();
+        }
+
+        private void bChangelogMergeForge_Click(object sender, EventArgs e)
+        {
+            Changelog.forge.writeFile("_forge");
+        }
+
+        private void bChangelogMergeMods_Click(object sender, EventArgs e)
+        {
+            Changelog.mods.writeFile("_mods");
+        }
+
+        private void bChangelogMergeOptional_Click(object sender, EventArgs e)
+        {
+            Changelog.optional.writeFile("_optional");
+        }
+
+        private void bChangelogMergeConfig_Click(object sender, EventArgs e)
+        {
+            Changelog.configs.writeFile("_config");
+        }
+
+        private void bChangelogMergeRoot_Click(object sender, EventArgs e)
+        {
+            Changelog.root.writeFile("_root");
+        }
+
+        private void bConvert_Click(object sender, EventArgs e)
+        {
+            string temp = "\n" + rtbDebug.Text;
+            rtbDebug.Clear();
+
+            temp = temp.Replace("\t","").Replace("|", "\n").Replace("\n\n", "\n").Replace("\n\n", "\n");
+            temp = temp.Replace("twd", "towny.wild.destroy").Replace("twb", "towny.wild.build").Replace("twu", "towny.wild.item_use").Replace("tws", "towny.wild.switch");
+            temp = temp.Replace("tcad", "towny.claimed.alltown.destroy").Replace("tcab", "towny.claimed.alltown.build").Replace("tcau", "towny.claimed.alltown.item_use").Replace("tcas", "towny.claimed.alltown.switch");
+            temp = temp.Replace("tcod", "towny.claimed.owntown.destroy").Replace("tcob", "towny.claimed.owntown.build").Replace("tcou", "towny.claimed.owntown.item_use").Replace("tcos", "towny.claimed.owntown.switch");
+
+            temp = temp.Replace("\n", "\n    - ");
+
+            rtbDebug.Text = temp;
         }
     }
 }

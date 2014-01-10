@@ -64,7 +64,6 @@
             this.label19 = new System.Windows.Forms.Label();
             this.bInstall = new System.Windows.Forms.Button();
             this.bInstallStartMC = new System.Windows.Forms.Button();
-            this.dummy = new System.Windows.Forms.Button();
             this.cbInstallClean = new System.Windows.Forms.CheckBox();
             this.bInstallChange = new System.Windows.Forms.Button();
             this.splitContainer33 = new System.Windows.Forms.SplitContainer();
@@ -160,6 +159,7 @@
             this.tabControlChangelog = new System.Windows.Forms.TabControl();
             this.tabAdminChangelogForge = new System.Windows.Forms.TabPage();
             this.splitContainer23 = new System.Windows.Forms.SplitContainer();
+            this.bChangelogMergeForge = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.bChangelogForgeGet = new System.Windows.Forms.Button();
             this.numChangelogForge = new System.Windows.Forms.NumericUpDown();
@@ -167,6 +167,7 @@
             this.lbChangelogForge = new System.Windows.Forms.ListBox();
             this.tabAdminChangelogMods = new System.Windows.Forms.TabPage();
             this.splitContainer24 = new System.Windows.Forms.SplitContainer();
+            this.bChangelogMergeMods = new System.Windows.Forms.Button();
             this.bChangelogModsGet = new System.Windows.Forms.Button();
             this.cbChangelogModsInit = new System.Windows.Forms.CheckBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -174,6 +175,7 @@
             this.lbChangelogMods = new System.Windows.Forms.ListBox();
             this.tabAdminChangelogOptional = new System.Windows.Forms.TabPage();
             this.splitContainer25 = new System.Windows.Forms.SplitContainer();
+            this.bChangelogMergeOptional = new System.Windows.Forms.Button();
             this.bChangelogOptionalGet = new System.Windows.Forms.Button();
             this.cbChangelogOptionalInit = new System.Windows.Forms.CheckBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -181,6 +183,7 @@
             this.lbChangelogOptional = new System.Windows.Forms.ListBox();
             this.tabAdminChangelogConfig = new System.Windows.Forms.TabPage();
             this.splitContainer26 = new System.Windows.Forms.SplitContainer();
+            this.bChangelogMergeConfig = new System.Windows.Forms.Button();
             this.bChangelogConfigGet = new System.Windows.Forms.Button();
             this.cbChangelogConfigInit = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -188,6 +191,7 @@
             this.lbChangelogConfig = new System.Windows.Forms.ListBox();
             this.tabAdminChangelogRoot = new System.Windows.Forms.TabPage();
             this.splitContainer50 = new System.Windows.Forms.SplitContainer();
+            this.bChangelogMergeRoot = new System.Windows.Forms.Button();
             this.bChangelogRootGet = new System.Windows.Forms.Button();
             this.cbChangelogRootInit = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -212,6 +216,8 @@
             this.lbAdminRootLog = new System.Windows.Forms.ListBox();
             this.tabDebug = new System.Windows.Forms.TabPage();
             this.splitContainer42 = new System.Windows.Forms.SplitContainer();
+            this.bConvert = new System.Windows.Forms.Button();
+            this.dummy = new System.Windows.Forms.Button();
             this.bDebugClear = new System.Windows.Forms.Button();
             this.bDebugProfile = new System.Windows.Forms.Button();
             this.rtbDebug = new System.Windows.Forms.RichTextBox();
@@ -465,7 +471,7 @@
             this.tabUpdate.Padding = new System.Windows.Forms.Padding(3);
             this.tabUpdate.Size = new System.Drawing.Size(585, 519);
             this.tabUpdate.TabIndex = 0;
-            this.tabUpdate.Text = "tabUpdate";
+            this.tabUpdate.Text = "Update";
             this.tabUpdate.UseVisualStyleBackColor = true;
             // 
             // splitContainer36
@@ -658,7 +664,7 @@
             this.tabInstall.Padding = new System.Windows.Forms.Padding(3);
             this.tabInstall.Size = new System.Drawing.Size(585, 519);
             this.tabInstall.TabIndex = 1;
-            this.tabInstall.Text = "tabInstall";
+            this.tabInstall.Text = "Installieren/Konfigurieren";
             this.tabInstall.UseVisualStyleBackColor = true;
             // 
             // splitContainer30
@@ -842,7 +848,6 @@
             this.splitContainer32.Panel1.Controls.Add(this.label19);
             this.splitContainer32.Panel1.Controls.Add(this.bInstall);
             this.splitContainer32.Panel1.Controls.Add(this.bInstallStartMC);
-            this.splitContainer32.Panel1.Controls.Add(this.dummy);
             this.splitContainer32.Panel1.Controls.Add(this.cbInstallClean);
             this.splitContainer32.Panel1.Controls.Add(this.bInstallChange);
             // 
@@ -904,17 +909,6 @@
             this.bInstallStartMC.Text = "start Minecraft";
             this.bInstallStartMC.UseVisualStyleBackColor = true;
             this.bInstallStartMC.Click += new System.EventHandler(this.bStartMC_Click);
-            // 
-            // dummy
-            // 
-            this.dummy.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.dummy.Location = new System.Drawing.Point(331, 37);
-            this.dummy.Name = "dummy";
-            this.dummy.Size = new System.Drawing.Size(75, 24);
-            this.dummy.TabIndex = 29;
-            this.dummy.Text = "(dummy)";
-            this.dummy.UseVisualStyleBackColor = true;
-            this.dummy.Click += new System.EventHandler(this.dummy_Click);
             // 
             // cbInstallClean
             // 
@@ -1218,7 +1212,7 @@
             this.tabAdminNeeded.Location = new System.Drawing.Point(4, 22);
             this.tabAdminNeeded.Name = "tabAdminNeeded";
             this.tabAdminNeeded.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminNeeded.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminNeeded.Size = new System.Drawing.Size(571, 487);
             this.tabAdminNeeded.TabIndex = 1;
             this.tabAdminNeeded.Text = "Mods";
             this.tabAdminNeeded.UseVisualStyleBackColor = true;
@@ -1237,7 +1231,7 @@
             // splitContainer5.Panel2
             // 
             this.splitContainer5.Panel2.Controls.Add(this.splitContainer7);
-            this.splitContainer5.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer5.Size = new System.Drawing.Size(565, 481);
             this.splitContainer5.SplitterDistance = 183;
             this.splitContainer5.TabIndex = 23;
             // 
@@ -1304,7 +1298,7 @@
             // splitContainer7.Panel2
             // 
             this.splitContainer7.Panel2.Controls.Add(this.lbAdminModsLog);
-            this.splitContainer7.Size = new System.Drawing.Size(456, 481);
+            this.splitContainer7.Size = new System.Drawing.Size(378, 481);
             this.splitContainer7.SplitterDistance = 166;
             this.splitContainer7.TabIndex = 0;
             // 
@@ -1322,7 +1316,7 @@
             // splitContainer8.Panel2
             // 
             this.splitContainer8.Panel2.Controls.Add(this.updAdminNeededDelete);
-            this.splitContainer8.Size = new System.Drawing.Size(456, 166);
+            this.splitContainer8.Size = new System.Drawing.Size(378, 166);
             this.splitContainer8.SplitterDistance = 137;
             this.splitContainer8.TabIndex = 0;
             // 
@@ -1340,7 +1334,7 @@
             // splitContainer9.Panel2
             // 
             this.splitContainer9.Panel2.Controls.Add(this.splitContainer11);
-            this.splitContainer9.Size = new System.Drawing.Size(456, 137);
+            this.splitContainer9.Size = new System.Drawing.Size(378, 137);
             this.splitContainer9.SplitterDistance = 67;
             this.splitContainer9.TabIndex = 0;
             // 
@@ -1358,7 +1352,7 @@
             // splitContainer10.Panel2
             // 
             this.splitContainer10.Panel2.Controls.Add(this.updAdminNeededAdd);
-            this.splitContainer10.Size = new System.Drawing.Size(456, 67);
+            this.splitContainer10.Size = new System.Drawing.Size(378, 67);
             this.splitContainer10.SplitterDistance = 25;
             this.splitContainer10.TabIndex = 0;
             // 
@@ -1378,7 +1372,7 @@
             this.updAdminNeededAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminNeededAdd.Location = new System.Drawing.Point(0, 0);
             this.updAdminNeededAdd.Name = "updAdminNeededAdd";
-            this.updAdminNeededAdd.Size = new System.Drawing.Size(456, 38);
+            this.updAdminNeededAdd.Size = new System.Drawing.Size(378, 38);
             this.updAdminNeededAdd.TabIndex = 5;
             this.updAdminNeededAdd.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminModAdd_DragDrop);
             this.updAdminNeededAdd.DragEnter += new System.Windows.Forms.DragEventHandler(this.onDragEnter);
@@ -1397,7 +1391,7 @@
             // splitContainer11.Panel2
             // 
             this.splitContainer11.Panel2.Controls.Add(this.updAdminNeededReplace);
-            this.splitContainer11.Size = new System.Drawing.Size(456, 66);
+            this.splitContainer11.Size = new System.Drawing.Size(378, 66);
             this.splitContainer11.SplitterDistance = 25;
             this.splitContainer11.TabIndex = 0;
             // 
@@ -1417,7 +1411,7 @@
             this.updAdminNeededReplace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminNeededReplace.Location = new System.Drawing.Point(0, 0);
             this.updAdminNeededReplace.Name = "updAdminNeededReplace";
-            this.updAdminNeededReplace.Size = new System.Drawing.Size(456, 37);
+            this.updAdminNeededReplace.Size = new System.Drawing.Size(378, 37);
             this.updAdminNeededReplace.TabIndex = 6;
             this.updAdminNeededReplace.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminNeededReplace_DragDrop);
             this.updAdminNeededReplace.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminNeededReplace_DragEnter);
@@ -1438,7 +1432,7 @@
             this.lbAdminModsLog.FormattingEnabled = true;
             this.lbAdminModsLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminModsLog.Name = "lbAdminModsLog";
-            this.lbAdminModsLog.Size = new System.Drawing.Size(456, 311);
+            this.lbAdminModsLog.Size = new System.Drawing.Size(378, 311);
             this.lbAdminModsLog.TabIndex = 1;
             this.lbAdminModsLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbAdminModsLog_KeyUp);
             // 
@@ -1448,7 +1442,7 @@
             this.tabAdminOptional.Location = new System.Drawing.Point(4, 22);
             this.tabAdminOptional.Name = "tabAdminOptional";
             this.tabAdminOptional.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminOptional.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminOptional.Size = new System.Drawing.Size(571, 487);
             this.tabAdminOptional.TabIndex = 2;
             this.tabAdminOptional.Text = "Optional";
             this.tabAdminOptional.UseVisualStyleBackColor = true;
@@ -1467,7 +1461,7 @@
             // splitContainer12.Panel2
             // 
             this.splitContainer12.Panel2.Controls.Add(this.splitContainer14);
-            this.splitContainer12.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer12.Size = new System.Drawing.Size(565, 481);
             this.splitContainer12.SplitterDistance = 183;
             this.splitContainer12.TabIndex = 20;
             // 
@@ -1534,7 +1528,7 @@
             // splitContainer14.Panel2
             // 
             this.splitContainer14.Panel2.Controls.Add(this.lbAdminOptionalLog);
-            this.splitContainer14.Size = new System.Drawing.Size(456, 481);
+            this.splitContainer14.Size = new System.Drawing.Size(378, 481);
             this.splitContainer14.SplitterDistance = 166;
             this.splitContainer14.TabIndex = 0;
             // 
@@ -1552,7 +1546,7 @@
             // splitContainer15.Panel2
             // 
             this.splitContainer15.Panel2.Controls.Add(this.updAdminOptionalReplace);
-            this.splitContainer15.Size = new System.Drawing.Size(456, 166);
+            this.splitContainer15.Size = new System.Drawing.Size(378, 166);
             this.splitContainer15.SplitterDistance = 25;
             this.splitContainer15.TabIndex = 0;
             // 
@@ -1572,7 +1566,7 @@
             this.updAdminOptionalReplace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminOptionalReplace.Location = new System.Drawing.Point(0, 0);
             this.updAdminOptionalReplace.Name = "updAdminOptionalReplace";
-            this.updAdminOptionalReplace.Size = new System.Drawing.Size(456, 137);
+            this.updAdminOptionalReplace.Size = new System.Drawing.Size(378, 137);
             this.updAdminOptionalReplace.TabIndex = 10;
             this.updAdminOptionalReplace.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminOptionalReplace_DragDrop);
             this.updAdminOptionalReplace.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminOptionalReplace_DragEnter);
@@ -1583,7 +1577,7 @@
             this.lbAdminOptionalLog.FormattingEnabled = true;
             this.lbAdminOptionalLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminOptionalLog.Name = "lbAdminOptionalLog";
-            this.lbAdminOptionalLog.Size = new System.Drawing.Size(456, 311);
+            this.lbAdminOptionalLog.Size = new System.Drawing.Size(378, 311);
             this.lbAdminOptionalLog.TabIndex = 1;
             this.lbAdminOptionalLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbAdminOptionalLog_KeyUp);
             // 
@@ -1593,7 +1587,7 @@
             this.tabAdminConfig.Location = new System.Drawing.Point(4, 22);
             this.tabAdminConfig.Name = "tabAdminConfig";
             this.tabAdminConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminConfig.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminConfig.Size = new System.Drawing.Size(571, 487);
             this.tabAdminConfig.TabIndex = 3;
             this.tabAdminConfig.Text = "Config";
             this.tabAdminConfig.UseVisualStyleBackColor = true;
@@ -1612,7 +1606,7 @@
             // splitContainer16.Panel2
             // 
             this.splitContainer16.Panel2.Controls.Add(this.splitContainer18);
-            this.splitContainer16.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer16.Size = new System.Drawing.Size(565, 481);
             this.splitContainer16.SplitterDistance = 183;
             this.splitContainer16.TabIndex = 22;
             // 
@@ -1679,7 +1673,7 @@
             // splitContainer18.Panel2
             // 
             this.splitContainer18.Panel2.Controls.Add(this.lbAdminConfigLog);
-            this.splitContainer18.Size = new System.Drawing.Size(456, 481);
+            this.splitContainer18.Size = new System.Drawing.Size(378, 481);
             this.splitContainer18.SplitterDistance = 166;
             this.splitContainer18.TabIndex = 0;
             // 
@@ -1697,7 +1691,7 @@
             // splitContainer19.Panel2
             // 
             this.splitContainer19.Panel2.Controls.Add(this.updAdminConfigDelete);
-            this.splitContainer19.Size = new System.Drawing.Size(456, 166);
+            this.splitContainer19.Size = new System.Drawing.Size(378, 166);
             this.splitContainer19.SplitterDistance = 137;
             this.splitContainer19.TabIndex = 0;
             // 
@@ -1715,7 +1709,7 @@
             // splitContainer20.Panel2
             // 
             this.splitContainer20.Panel2.Controls.Add(this.splitContainer22);
-            this.splitContainer20.Size = new System.Drawing.Size(456, 137);
+            this.splitContainer20.Size = new System.Drawing.Size(378, 137);
             this.splitContainer20.SplitterDistance = 67;
             this.splitContainer20.TabIndex = 0;
             // 
@@ -1733,7 +1727,7 @@
             // splitContainer21.Panel2
             // 
             this.splitContainer21.Panel2.Controls.Add(this.updAdminConfigAdd);
-            this.splitContainer21.Size = new System.Drawing.Size(456, 67);
+            this.splitContainer21.Size = new System.Drawing.Size(378, 67);
             this.splitContainer21.SplitterDistance = 25;
             this.splitContainer21.TabIndex = 0;
             // 
@@ -1754,7 +1748,7 @@
             this.updAdminConfigAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminConfigAdd.Location = new System.Drawing.Point(0, 0);
             this.updAdminConfigAdd.Name = "updAdminConfigAdd";
-            this.updAdminConfigAdd.Size = new System.Drawing.Size(456, 38);
+            this.updAdminConfigAdd.Size = new System.Drawing.Size(378, 38);
             this.updAdminConfigAdd.TabIndex = 16;
             this.updAdminConfigAdd.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminConfigAdd_DragDrop);
             this.updAdminConfigAdd.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminConfigAdd_DragEnter);
@@ -1773,7 +1767,7 @@
             // splitContainer22.Panel2
             // 
             this.splitContainer22.Panel2.Controls.Add(this.updAdminConfigReplace);
-            this.splitContainer22.Size = new System.Drawing.Size(456, 66);
+            this.splitContainer22.Size = new System.Drawing.Size(378, 66);
             this.splitContainer22.SplitterDistance = 26;
             this.splitContainer22.TabIndex = 0;
             // 
@@ -1793,7 +1787,7 @@
             this.updAdminConfigReplace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminConfigReplace.Location = new System.Drawing.Point(0, 0);
             this.updAdminConfigReplace.Name = "updAdminConfigReplace";
-            this.updAdminConfigReplace.Size = new System.Drawing.Size(456, 36);
+            this.updAdminConfigReplace.Size = new System.Drawing.Size(378, 36);
             this.updAdminConfigReplace.TabIndex = 17;
             this.updAdminConfigReplace.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminConfigReplace_DragDrop);
             this.updAdminConfigReplace.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminConfigReplace_DragEnter);
@@ -1814,7 +1808,7 @@
             this.lbAdminConfigLog.FormattingEnabled = true;
             this.lbAdminConfigLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminConfigLog.Name = "lbAdminConfigLog";
-            this.lbAdminConfigLog.Size = new System.Drawing.Size(456, 311);
+            this.lbAdminConfigLog.Size = new System.Drawing.Size(378, 311);
             this.lbAdminConfigLog.TabIndex = 1;
             this.lbAdminConfigLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbAdminConfigLog_KeyUp);
             // 
@@ -1824,7 +1818,7 @@
             this.tabAdminFTP.Location = new System.Drawing.Point(4, 22);
             this.tabAdminFTP.Name = "tabAdminFTP";
             this.tabAdminFTP.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminFTP.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminFTP.Size = new System.Drawing.Size(571, 487);
             this.tabAdminFTP.TabIndex = 5;
             this.tabAdminFTP.Text = "Upload";
             this.tabAdminFTP.UseVisualStyleBackColor = true;
@@ -1844,7 +1838,7 @@
             // splitContainer27.Panel2
             // 
             this.splitContainer27.Panel2.Controls.Add(this.lbAdminLog);
-            this.splitContainer27.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer27.Size = new System.Drawing.Size(565, 481);
             this.splitContainer27.SplitterDistance = 115;
             this.splitContainer27.TabIndex = 18;
             // 
@@ -1864,7 +1858,7 @@
             // 
             this.splitContainer28.Panel2.Controls.Add(this.panel1);
             this.splitContainer28.Panel2.Controls.Add(this.bUpload);
-            this.splitContainer28.Size = new System.Drawing.Size(643, 115);
+            this.splitContainer28.Size = new System.Drawing.Size(565, 115);
             this.splitContainer28.SplitterDistance = 61;
             this.splitContainer28.TabIndex = 0;
             // 
@@ -1882,7 +1876,7 @@
             // splitContainer29.Panel2
             // 
             this.splitContainer29.Panel2.Controls.Add(this.pbAdminUploadOverall);
-            this.splitContainer29.Size = new System.Drawing.Size(643, 61);
+            this.splitContainer29.Size = new System.Drawing.Size(565, 61);
             this.splitContainer29.SplitterDistance = 28;
             this.splitContainer29.TabIndex = 0;
             // 
@@ -1891,7 +1885,7 @@
             this.pbAdminUpload.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbAdminUpload.Location = new System.Drawing.Point(0, 0);
             this.pbAdminUpload.Name = "pbAdminUpload";
-            this.pbAdminUpload.Size = new System.Drawing.Size(643, 28);
+            this.pbAdminUpload.Size = new System.Drawing.Size(565, 28);
             this.pbAdminUpload.TabIndex = 16;
             // 
             // pbAdminUploadOverall
@@ -1899,7 +1893,7 @@
             this.pbAdminUploadOverall.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pbAdminUploadOverall.Location = new System.Drawing.Point(0, 0);
             this.pbAdminUploadOverall.Name = "pbAdminUploadOverall";
-            this.pbAdminUploadOverall.Size = new System.Drawing.Size(643, 29);
+            this.pbAdminUploadOverall.Size = new System.Drawing.Size(565, 29);
             this.pbAdminUploadOverall.TabIndex = 17;
             // 
             // panel1
@@ -2067,7 +2061,7 @@
             this.lbAdminLog.FormattingEnabled = true;
             this.lbAdminLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminLog.Name = "lbAdminLog";
-            this.lbAdminLog.Size = new System.Drawing.Size(643, 362);
+            this.lbAdminLog.Size = new System.Drawing.Size(565, 362);
             this.lbAdminLog.TabIndex = 2;
             // 
             // tabAdminChangelog
@@ -2076,7 +2070,7 @@
             this.tabAdminChangelog.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelog.Name = "tabAdminChangelog";
             this.tabAdminChangelog.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelog.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminChangelog.Size = new System.Drawing.Size(571, 487);
             this.tabAdminChangelog.TabIndex = 6;
             this.tabAdminChangelog.Text = "Changelog";
             this.tabAdminChangelog.UseVisualStyleBackColor = true;
@@ -2092,7 +2086,7 @@
             this.tabControlChangelog.Location = new System.Drawing.Point(3, 3);
             this.tabControlChangelog.Name = "tabControlChangelog";
             this.tabControlChangelog.SelectedIndex = 0;
-            this.tabControlChangelog.Size = new System.Drawing.Size(643, 481);
+            this.tabControlChangelog.Size = new System.Drawing.Size(565, 481);
             this.tabControlChangelog.TabIndex = 0;
             // 
             // tabAdminChangelogForge
@@ -2101,7 +2095,7 @@
             this.tabAdminChangelogForge.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelogForge.Name = "tabAdminChangelogForge";
             this.tabAdminChangelogForge.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelogForge.Size = new System.Drawing.Size(635, 455);
+            this.tabAdminChangelogForge.Size = new System.Drawing.Size(557, 455);
             this.tabAdminChangelogForge.TabIndex = 0;
             this.tabAdminChangelogForge.Text = "Forge";
             this.tabAdminChangelogForge.UseVisualStyleBackColor = true;
@@ -2116,6 +2110,7 @@
             // 
             // splitContainer23.Panel1
             // 
+            this.splitContainer23.Panel1.Controls.Add(this.bChangelogMergeForge);
             this.splitContainer23.Panel1.Controls.Add(this.label9);
             this.splitContainer23.Panel1.Controls.Add(this.bChangelogForgeGet);
             this.splitContainer23.Panel1.Controls.Add(this.numChangelogForge);
@@ -2124,9 +2119,19 @@
             // splitContainer23.Panel2
             // 
             this.splitContainer23.Panel2.Controls.Add(this.lbChangelogForge);
-            this.splitContainer23.Size = new System.Drawing.Size(629, 449);
+            this.splitContainer23.Size = new System.Drawing.Size(551, 449);
             this.splitContainer23.SplitterDistance = 25;
             this.splitContainer23.TabIndex = 5;
+            // 
+            // bChangelogMergeForge
+            // 
+            this.bChangelogMergeForge.Location = new System.Drawing.Point(392, 1);
+            this.bChangelogMergeForge.Name = "bChangelogMergeForge";
+            this.bChangelogMergeForge.Size = new System.Drawing.Size(75, 23);
+            this.bChangelogMergeForge.TabIndex = 5;
+            this.bChangelogMergeForge.Text = "merge";
+            this.bChangelogMergeForge.UseVisualStyleBackColor = true;
+            this.bChangelogMergeForge.Click += new System.EventHandler(this.bChangelogMergeForge_Click);
             // 
             // label9
             // 
@@ -2171,7 +2176,7 @@
             this.lbChangelogForge.FormattingEnabled = true;
             this.lbChangelogForge.Location = new System.Drawing.Point(0, 0);
             this.lbChangelogForge.Name = "lbChangelogForge";
-            this.lbChangelogForge.Size = new System.Drawing.Size(629, 420);
+            this.lbChangelogForge.Size = new System.Drawing.Size(551, 420);
             this.lbChangelogForge.TabIndex = 3;
             // 
             // tabAdminChangelogMods
@@ -2180,7 +2185,7 @@
             this.tabAdminChangelogMods.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelogMods.Name = "tabAdminChangelogMods";
             this.tabAdminChangelogMods.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelogMods.Size = new System.Drawing.Size(635, 455);
+            this.tabAdminChangelogMods.Size = new System.Drawing.Size(557, 455);
             this.tabAdminChangelogMods.TabIndex = 1;
             this.tabAdminChangelogMods.Text = "Mods";
             this.tabAdminChangelogMods.UseVisualStyleBackColor = true;
@@ -2195,6 +2200,7 @@
             // 
             // splitContainer24.Panel1
             // 
+            this.splitContainer24.Panel1.Controls.Add(this.bChangelogMergeMods);
             this.splitContainer24.Panel1.Controls.Add(this.bChangelogModsGet);
             this.splitContainer24.Panel1.Controls.Add(this.cbChangelogModsInit);
             this.splitContainer24.Panel1.Controls.Add(this.label10);
@@ -2203,9 +2209,19 @@
             // splitContainer24.Panel2
             // 
             this.splitContainer24.Panel2.Controls.Add(this.lbChangelogMods);
-            this.splitContainer24.Size = new System.Drawing.Size(629, 449);
+            this.splitContainer24.Size = new System.Drawing.Size(551, 449);
             this.splitContainer24.SplitterDistance = 25;
             this.splitContainer24.TabIndex = 10;
+            // 
+            // bChangelogMergeMods
+            // 
+            this.bChangelogMergeMods.Location = new System.Drawing.Point(392, 1);
+            this.bChangelogMergeMods.Name = "bChangelogMergeMods";
+            this.bChangelogMergeMods.Size = new System.Drawing.Size(75, 23);
+            this.bChangelogMergeMods.TabIndex = 10;
+            this.bChangelogMergeMods.Text = "merge";
+            this.bChangelogMergeMods.UseVisualStyleBackColor = true;
+            this.bChangelogMergeMods.Click += new System.EventHandler(this.bChangelogMergeMods_Click);
             // 
             // bChangelogModsGet
             // 
@@ -2250,7 +2266,7 @@
             this.lbChangelogMods.FormattingEnabled = true;
             this.lbChangelogMods.Location = new System.Drawing.Point(0, 0);
             this.lbChangelogMods.Name = "lbChangelogMods";
-            this.lbChangelogMods.Size = new System.Drawing.Size(629, 420);
+            this.lbChangelogMods.Size = new System.Drawing.Size(551, 420);
             this.lbChangelogMods.TabIndex = 8;
             // 
             // tabAdminChangelogOptional
@@ -2259,7 +2275,7 @@
             this.tabAdminChangelogOptional.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelogOptional.Name = "tabAdminChangelogOptional";
             this.tabAdminChangelogOptional.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelogOptional.Size = new System.Drawing.Size(635, 455);
+            this.tabAdminChangelogOptional.Size = new System.Drawing.Size(557, 455);
             this.tabAdminChangelogOptional.TabIndex = 2;
             this.tabAdminChangelogOptional.Text = "Optional";
             this.tabAdminChangelogOptional.UseVisualStyleBackColor = true;
@@ -2274,6 +2290,7 @@
             // 
             // splitContainer25.Panel1
             // 
+            this.splitContainer25.Panel1.Controls.Add(this.bChangelogMergeOptional);
             this.splitContainer25.Panel1.Controls.Add(this.bChangelogOptionalGet);
             this.splitContainer25.Panel1.Controls.Add(this.cbChangelogOptionalInit);
             this.splitContainer25.Panel1.Controls.Add(this.label11);
@@ -2282,9 +2299,19 @@
             // splitContainer25.Panel2
             // 
             this.splitContainer25.Panel2.Controls.Add(this.lbChangelogOptional);
-            this.splitContainer25.Size = new System.Drawing.Size(629, 449);
+            this.splitContainer25.Size = new System.Drawing.Size(551, 449);
             this.splitContainer25.SplitterDistance = 25;
             this.splitContainer25.TabIndex = 10;
+            // 
+            // bChangelogMergeOptional
+            // 
+            this.bChangelogMergeOptional.Location = new System.Drawing.Point(392, 1);
+            this.bChangelogMergeOptional.Name = "bChangelogMergeOptional";
+            this.bChangelogMergeOptional.Size = new System.Drawing.Size(75, 23);
+            this.bChangelogMergeOptional.TabIndex = 10;
+            this.bChangelogMergeOptional.Text = "merge";
+            this.bChangelogMergeOptional.UseVisualStyleBackColor = true;
+            this.bChangelogMergeOptional.Click += new System.EventHandler(this.bChangelogMergeOptional_Click);
             // 
             // bChangelogOptionalGet
             // 
@@ -2329,7 +2356,7 @@
             this.lbChangelogOptional.FormattingEnabled = true;
             this.lbChangelogOptional.Location = new System.Drawing.Point(0, 0);
             this.lbChangelogOptional.Name = "lbChangelogOptional";
-            this.lbChangelogOptional.Size = new System.Drawing.Size(629, 420);
+            this.lbChangelogOptional.Size = new System.Drawing.Size(551, 420);
             this.lbChangelogOptional.TabIndex = 8;
             // 
             // tabAdminChangelogConfig
@@ -2338,7 +2365,7 @@
             this.tabAdminChangelogConfig.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelogConfig.Name = "tabAdminChangelogConfig";
             this.tabAdminChangelogConfig.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelogConfig.Size = new System.Drawing.Size(635, 455);
+            this.tabAdminChangelogConfig.Size = new System.Drawing.Size(557, 455);
             this.tabAdminChangelogConfig.TabIndex = 3;
             this.tabAdminChangelogConfig.Text = "Config";
             this.tabAdminChangelogConfig.UseVisualStyleBackColor = true;
@@ -2353,6 +2380,7 @@
             // 
             // splitContainer26.Panel1
             // 
+            this.splitContainer26.Panel1.Controls.Add(this.bChangelogMergeConfig);
             this.splitContainer26.Panel1.Controls.Add(this.bChangelogConfigGet);
             this.splitContainer26.Panel1.Controls.Add(this.cbChangelogConfigInit);
             this.splitContainer26.Panel1.Controls.Add(this.label12);
@@ -2361,9 +2389,19 @@
             // splitContainer26.Panel2
             // 
             this.splitContainer26.Panel2.Controls.Add(this.lbChangelogConfig);
-            this.splitContainer26.Size = new System.Drawing.Size(629, 449);
+            this.splitContainer26.Size = new System.Drawing.Size(551, 449);
             this.splitContainer26.SplitterDistance = 25;
             this.splitContainer26.TabIndex = 10;
+            // 
+            // bChangelogMergeConfig
+            // 
+            this.bChangelogMergeConfig.Location = new System.Drawing.Point(392, 1);
+            this.bChangelogMergeConfig.Name = "bChangelogMergeConfig";
+            this.bChangelogMergeConfig.Size = new System.Drawing.Size(75, 23);
+            this.bChangelogMergeConfig.TabIndex = 10;
+            this.bChangelogMergeConfig.Text = "merge";
+            this.bChangelogMergeConfig.UseVisualStyleBackColor = true;
+            this.bChangelogMergeConfig.Click += new System.EventHandler(this.bChangelogMergeConfig_Click);
             // 
             // bChangelogConfigGet
             // 
@@ -2408,7 +2446,7 @@
             this.lbChangelogConfig.FormattingEnabled = true;
             this.lbChangelogConfig.Location = new System.Drawing.Point(0, 0);
             this.lbChangelogConfig.Name = "lbChangelogConfig";
-            this.lbChangelogConfig.Size = new System.Drawing.Size(629, 420);
+            this.lbChangelogConfig.Size = new System.Drawing.Size(551, 420);
             this.lbChangelogConfig.TabIndex = 8;
             // 
             // tabAdminChangelogRoot
@@ -2417,7 +2455,7 @@
             this.tabAdminChangelogRoot.Location = new System.Drawing.Point(4, 22);
             this.tabAdminChangelogRoot.Name = "tabAdminChangelogRoot";
             this.tabAdminChangelogRoot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminChangelogRoot.Size = new System.Drawing.Size(635, 455);
+            this.tabAdminChangelogRoot.Size = new System.Drawing.Size(557, 455);
             this.tabAdminChangelogRoot.TabIndex = 4;
             this.tabAdminChangelogRoot.Text = "Root";
             this.tabAdminChangelogRoot.UseVisualStyleBackColor = true;
@@ -2432,6 +2470,7 @@
             // 
             // splitContainer50.Panel1
             // 
+            this.splitContainer50.Panel1.Controls.Add(this.bChangelogMergeRoot);
             this.splitContainer50.Panel1.Controls.Add(this.bChangelogRootGet);
             this.splitContainer50.Panel1.Controls.Add(this.cbChangelogRootInit);
             this.splitContainer50.Panel1.Controls.Add(this.label7);
@@ -2440,9 +2479,19 @@
             // splitContainer50.Panel2
             // 
             this.splitContainer50.Panel2.Controls.Add(this.lbChangelogRoot);
-            this.splitContainer50.Size = new System.Drawing.Size(629, 449);
+            this.splitContainer50.Size = new System.Drawing.Size(551, 449);
             this.splitContainer50.SplitterDistance = 25;
             this.splitContainer50.TabIndex = 11;
+            // 
+            // bChangelogMergeRoot
+            // 
+            this.bChangelogMergeRoot.Location = new System.Drawing.Point(392, 1);
+            this.bChangelogMergeRoot.Name = "bChangelogMergeRoot";
+            this.bChangelogMergeRoot.Size = new System.Drawing.Size(75, 23);
+            this.bChangelogMergeRoot.TabIndex = 10;
+            this.bChangelogMergeRoot.Text = "merge";
+            this.bChangelogMergeRoot.UseVisualStyleBackColor = true;
+            this.bChangelogMergeRoot.Click += new System.EventHandler(this.bChangelogMergeRoot_Click);
             // 
             // bChangelogRootGet
             // 
@@ -2487,7 +2536,7 @@
             this.lbChangelogRoot.FormattingEnabled = true;
             this.lbChangelogRoot.Location = new System.Drawing.Point(0, 0);
             this.lbChangelogRoot.Name = "lbChangelogRoot";
-            this.lbChangelogRoot.Size = new System.Drawing.Size(629, 420);
+            this.lbChangelogRoot.Size = new System.Drawing.Size(551, 420);
             this.lbChangelogRoot.TabIndex = 8;
             // 
             // tabAdminRoot
@@ -2496,7 +2545,7 @@
             this.tabAdminRoot.Location = new System.Drawing.Point(4, 22);
             this.tabAdminRoot.Name = "tabAdminRoot";
             this.tabAdminRoot.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAdminRoot.Size = new System.Drawing.Size(649, 487);
+            this.tabAdminRoot.Size = new System.Drawing.Size(571, 487);
             this.tabAdminRoot.TabIndex = 7;
             this.tabAdminRoot.Text = "Root";
             this.tabAdminRoot.UseVisualStyleBackColor = true;
@@ -2515,7 +2564,7 @@
             // splitContainer43.Panel2
             // 
             this.splitContainer43.Panel2.Controls.Add(this.splitContainer45);
-            this.splitContainer43.Size = new System.Drawing.Size(643, 481);
+            this.splitContainer43.Size = new System.Drawing.Size(565, 481);
             this.splitContainer43.SplitterDistance = 183;
             this.splitContainer43.TabIndex = 24;
             // 
@@ -2582,7 +2631,7 @@
             // splitContainer45.Panel2
             // 
             this.splitContainer45.Panel2.Controls.Add(this.lbAdminRootLog);
-            this.splitContainer45.Size = new System.Drawing.Size(456, 481);
+            this.splitContainer45.Size = new System.Drawing.Size(378, 481);
             this.splitContainer45.SplitterDistance = 166;
             this.splitContainer45.TabIndex = 0;
             // 
@@ -2600,7 +2649,7 @@
             // splitContainer46.Panel2
             // 
             this.splitContainer46.Panel2.Controls.Add(this.updAdminRootDelete);
-            this.splitContainer46.Size = new System.Drawing.Size(456, 166);
+            this.splitContainer46.Size = new System.Drawing.Size(378, 166);
             this.splitContainer46.SplitterDistance = 137;
             this.splitContainer46.TabIndex = 0;
             // 
@@ -2618,7 +2667,7 @@
             // splitContainer47.Panel2
             // 
             this.splitContainer47.Panel2.Controls.Add(this.splitContainer49);
-            this.splitContainer47.Size = new System.Drawing.Size(456, 137);
+            this.splitContainer47.Size = new System.Drawing.Size(378, 137);
             this.splitContainer47.SplitterDistance = 67;
             this.splitContainer47.TabIndex = 0;
             // 
@@ -2636,7 +2685,7 @@
             // splitContainer48.Panel2
             // 
             this.splitContainer48.Panel2.Controls.Add(this.updAdminRootAdd);
-            this.splitContainer48.Size = new System.Drawing.Size(456, 67);
+            this.splitContainer48.Size = new System.Drawing.Size(378, 67);
             this.splitContainer48.SplitterDistance = 25;
             this.splitContainer48.TabIndex = 0;
             // 
@@ -2656,7 +2705,7 @@
             this.updAdminRootAdd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updAdminRootAdd.Location = new System.Drawing.Point(0, 0);
             this.updAdminRootAdd.Name = "updAdminRootAdd";
-            this.updAdminRootAdd.Size = new System.Drawing.Size(456, 38);
+            this.updAdminRootAdd.Size = new System.Drawing.Size(378, 38);
             this.updAdminRootAdd.TabIndex = 5;
             this.updAdminRootAdd.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminRootAdd_DragDrop);
             this.updAdminRootAdd.DragEnter += new System.Windows.Forms.DragEventHandler(this.onDragEnter);
@@ -2675,7 +2724,7 @@
             // splitContainer49.Panel2
             // 
             this.splitContainer49.Panel2.Controls.Add(this.updaAdminRootReplace);
-            this.splitContainer49.Size = new System.Drawing.Size(456, 66);
+            this.splitContainer49.Size = new System.Drawing.Size(378, 66);
             this.splitContainer49.SplitterDistance = 25;
             this.splitContainer49.TabIndex = 0;
             // 
@@ -2695,7 +2744,7 @@
             this.updaAdminRootReplace.Dock = System.Windows.Forms.DockStyle.Fill;
             this.updaAdminRootReplace.Location = new System.Drawing.Point(0, 0);
             this.updaAdminRootReplace.Name = "updaAdminRootReplace";
-            this.updaAdminRootReplace.Size = new System.Drawing.Size(456, 37);
+            this.updaAdminRootReplace.Size = new System.Drawing.Size(378, 37);
             this.updaAdminRootReplace.TabIndex = 6;
             this.updaAdminRootReplace.DragDrop += new System.Windows.Forms.DragEventHandler(this.updAdminRootReplace_DragDrop);
             this.updaAdminRootReplace.DragEnter += new System.Windows.Forms.DragEventHandler(this.updAdminRootReplace_DragEnter);
@@ -2716,7 +2765,7 @@
             this.lbAdminRootLog.FormattingEnabled = true;
             this.lbAdminRootLog.Location = new System.Drawing.Point(0, 0);
             this.lbAdminRootLog.Name = "lbAdminRootLog";
-            this.lbAdminRootLog.Size = new System.Drawing.Size(456, 311);
+            this.lbAdminRootLog.Size = new System.Drawing.Size(378, 311);
             this.lbAdminRootLog.TabIndex = 1;
             this.lbAdminRootLog.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lbAdminRootLog_KeyUp);
             // 
@@ -2741,6 +2790,8 @@
             // 
             // splitContainer42.Panel1
             // 
+            this.splitContainer42.Panel1.Controls.Add(this.bConvert);
+            this.splitContainer42.Panel1.Controls.Add(this.dummy);
             this.splitContainer42.Panel1.Controls.Add(this.bDebugClear);
             this.splitContainer42.Panel1.Controls.Add(this.bDebugProfile);
             // 
@@ -2750,6 +2801,27 @@
             this.splitContainer42.Size = new System.Drawing.Size(579, 513);
             this.splitContainer42.SplitterDistance = 28;
             this.splitContainer42.TabIndex = 20;
+            // 
+            // bConvert
+            // 
+            this.bConvert.Location = new System.Drawing.Point(300, 3);
+            this.bConvert.Name = "bConvert";
+            this.bConvert.Size = new System.Drawing.Size(90, 23);
+            this.bConvert.TabIndex = 31;
+            this.bConvert.Text = "convertToEsGM";
+            this.bConvert.UseVisualStyleBackColor = true;
+            this.bConvert.Click += new System.EventHandler(this.bConvert_Click);
+            // 
+            // dummy
+            // 
+            this.dummy.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.dummy.Location = new System.Drawing.Point(219, 2);
+            this.dummy.Name = "dummy";
+            this.dummy.Size = new System.Drawing.Size(75, 24);
+            this.dummy.TabIndex = 30;
+            this.dummy.Text = "(dummy)";
+            this.dummy.UseVisualStyleBackColor = true;
+            this.dummy.Click += new System.EventHandler(this.dummy_Click);
             // 
             // bDebugClear
             // 
@@ -2792,7 +2864,7 @@
             this.updateController1.releaseFilter.checkForBeta = true;
             this.updateController1.releaseFilter.checkForFinal = true;
             this.updateController1.releaseInfo.Type = updateSystemDotNet.releaseTypes.Beta;
-            this.updateController1.releaseInfo.Version = "1.0.1.31";
+            this.updateController1.releaseInfo.Version = "1.0.1.45";
             this.updateController1.requestElevation = true;
             this.updateController1.restartApplication = true;
             this.updateController1.updateUrl = "http://root.gu471.de/files/tnmcb/files";
@@ -2807,6 +2879,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(593, 545);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(609, 463);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -3204,7 +3277,6 @@
         private System.Windows.Forms.Button bInstallStartMC;
         private System.Windows.Forms.CheckBox cbInstallClean;
         private System.Windows.Forms.Button bUpdateStartMC;
-        private System.Windows.Forms.Button dummy;
         private System.Windows.Forms.SplitContainer splitContainer30;
         private System.Windows.Forms.SplitContainer splitContainer31;
         private System.Windows.Forms.SplitContainer splitContainer32;
@@ -3253,6 +3325,13 @@
         private GlacialComponents.Controls.GlacialList glInstallOptional;
         private System.Windows.Forms.CheckBox cbLockInstall;
         private System.Windows.Forms.Button bInstallKeyBind;
+        private System.Windows.Forms.Button bChangelogMergeForge;
+        private System.Windows.Forms.Button bChangelogMergeMods;
+        private System.Windows.Forms.Button bChangelogMergeOptional;
+        private System.Windows.Forms.Button bChangelogMergeConfig;
+        private System.Windows.Forms.Button bChangelogMergeRoot;
+        private System.Windows.Forms.Button dummy;
+        private System.Windows.Forms.Button bConvert;
         
     }
 }

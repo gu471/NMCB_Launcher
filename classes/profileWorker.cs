@@ -43,6 +43,9 @@ namespace NMCB_Launcher.classes
                 profileFile = onStart(profileFile, Version);
             }
 
+            //WO MCPatcher
+            profileFile.profiles.NMCBroz.lastVersionId = "NMCBroz";
+            
             profileFile.selectedProfile = "NMCBroz";
             string json = JsonConvert.SerializeObject(profileFile, Formatting.Indented);
             string path = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\.minecraft\\launcher_profiles.json";
@@ -91,7 +94,7 @@ namespace NMCB_Launcher.classes
             
             if (pf.profiles.NMCBroz.gameDir != gamedir)
             {
-                pf.profiles.NMCBroz.gameDir = gamedir;
+                pf.profiles.NMCBroz.gameDir = SysUtil.StringEncodingConvert(gamedir, "ISO-8859-1", "UTF-8");
             }
 
             if (pf.profiles.NMCBroz.lastVersionId != version)
